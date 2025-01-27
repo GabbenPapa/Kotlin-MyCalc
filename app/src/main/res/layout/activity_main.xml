@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtFirstInput"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/first_number"-->
+<!--        android:labelFor="@+id/edtFirstVal"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_margin="10dp"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtSecondInput"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/second_number"-->
+<!--        android:labelFor="@+id/edtSecondVal"-->
+
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/edtFirstVal"-->
+<!--        android:layout_margin="10dp"-->
+<!--        />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtFirstVal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/first_number"
+            android:inputType="number"
+            android:background="@color/white"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            android:layout_margin="6dp"
+            android:minHeight="48dp"
+
+            tools:ignore="LabelFor, autofill"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutFirst"
+        >
+        <com.google.android.material.textfield.TextInputEditText            android:id="@+id/edtSecondVal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/second_number"
+            android:inputType="number"
+            android:background="@color/white"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            android:layout_margin="6dp"
+            android:minHeight="48dp"
+
+            tools:ignore="LabelFor,MissingConstraints,autofill"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

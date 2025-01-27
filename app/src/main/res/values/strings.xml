@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyCalc</string>
+    <string name="value">value</string>
+    <string name="type_a_number">Type a number</string>
+    <string name="first_number">First number</string>
+    <string name="second_number">Second number</string>
+</resources>
