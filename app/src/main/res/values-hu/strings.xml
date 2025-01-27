@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">MyCalc</string>
     <string name="value">value</string>
-    <string name="type_a_number">Type a number</string>
-    <string name="first_number">First number</string>
-    <string name="second_number">Second number</string>
+    <string name="type_a_number">Adj meg egy számot</string>
+    <string name="first_number">Első szám</string>
+    <string name="second_number">Második szám</string>
     <string name="plus_btn">+</string>
     <string name="min_btn">-</string>
     <string name="div_btn">/</string>
