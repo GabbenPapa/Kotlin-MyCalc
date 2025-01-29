@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@color/white"
-            android:gravity="center"
+            android:gravity="start"
             android:hint="@string/first_number"
             android:inputType="number"
             android:minHeight="48dp"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@color/white"
-            android:gravity="center"
+            android:gravity="start"
             android:hint="@string/second_number"
             android:inputType="number"
             android:minHeight="48dp"
@@ -63,10 +63,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/inputLayoutSecond"
         tools:ignore="ExtraText">
 
@@ -74,42 +75,72 @@
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
             android:layout_margin="@dimen/buttonMargin"
-            tools:ignore="MissingConstraints"
-            android:text="@string/plus_btn"/>
+            android:layout_weight="0.25"
+            android:text="@string/plus_btn"
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
             android:layout_margin="@dimen/buttonMargin"
+            android:layout_weight="0.25"
 
-            tools:ignore="MissingConstraints"
-            android:text="@string/min_btn"/>
+            android:text="@string/min_btn"
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
             android:layout_margin="@dimen/buttonMargin"
+            android:layout_weight="0.25"
 
-            tools:ignore="MissingConstraints"
-            android:text="@string/div_btn"/>
+            android:text="@string/div_btn"
+            tools:ignore="MissingConstraints" />
         />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMulti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
             android:layout_margin="@dimen/buttonMargin"
+            android:layout_weight="0.25"
 
-            android:text="@string/multi_btn"/>
+            android:text="@string/multi_btn" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtResLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/res"
+        android:layout_margin="@dimen/buttonMargin"
+        android:padding="@dimen/buttonPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txtResLabel"
+    />
+
+    <TextView
+        android:id="@+id/txtRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/res"
+        android:layout_margin="@dimen/buttonMargin"
+        android:gravity="center"
+        android:padding="@dimen/buttonPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtResLabel"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

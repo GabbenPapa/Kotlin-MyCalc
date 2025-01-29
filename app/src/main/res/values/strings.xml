@@ -8,4 +8,6 @@
     <string name="min_btn">-</string>
     <string name="div_btn">/</string>
     <string name="multi_btn">*</string>
+    <string name="res">Result</string>
+
 </resources>
