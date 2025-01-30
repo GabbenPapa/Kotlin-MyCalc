@@ -142,5 +142,4 @@
         app:layout_constraintStart_toEndOf="@+id/txtResLabel"
         />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
