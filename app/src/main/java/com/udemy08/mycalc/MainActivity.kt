@@ -1,17 +1,12 @@
 package com.udemy08.mycalc
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.EditText
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
 import com.udemy08.mycalc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,55 +27,75 @@ class MainActivity : AppCompatActivity() {
         initListeners()
     }
 
+
+    @SuppressLint("SetTextI18n")
     private fun initListeners() {
         binding?.apply {
             btnAdd.setOnClickListener {
-                if (TextUtils.isEmpty(edtFirstVal.text)) {
-                    edtFirstVal.error = getString(R.string.str_enter_first_number)
-                } else if (TextUtils.isEmpty(edtSecondVal.text)) {
-                    edtSecondVal.error = getString(R.string.str_enter_second_number)
-                } else {
-                    val edtResult =
-                        Integer.valueOf(edtFirstVal.text.toString()) + edtSecondVal.text.toString().toInt()
-                    txtRes.text = edtResult.toString()
+                if (isNotEmptyInput()) {
+                    txtRes.text = sumNumbers(
+                        edtFirstVal.text.toString().toInt(),
+                        edtSecondVal.text.toString().toInt()
+                    ).toString()
                 }
             }
 
             btnMin.setOnClickListener {
-                if (TextUtils.isEmpty(edtFirstVal.text)) {
-                    edtFirstVal.error = getString(R.string.str_enter_first_number)
-                } else if (TextUtils.isEmpty(edtSecondVal.text)) {
-                    edtSecondVal.error = getString(R.string.str_enter_second_number)
-                } else {
-                    val edtResult =
-                        Integer.valueOf(edtFirstVal.text.toString()) - edtSecondVal.text.toString().toInt()
-                    txtRes.text = edtResult.toString()
+                if (isNotEmptyInput()) {
+                    txtRes.text = minNumbers(
+                        edtFirstVal.text.toString().toInt(),
+                        edtSecondVal.text.toString().toInt()
+                    ).toString()
                 }
             }
 
             btnMulti.setOnClickListener {
-                if (TextUtils.isEmpty(edtFirstVal.text)) {
-                    edtFirstVal.error = getString(R.string.str_enter_first_number)
-                } else if (TextUtils.isEmpty(edtSecondVal.text)) {
-                    edtSecondVal.error = getString(R.string.str_enter_second_number)
-                } else {
-                    val edtResult = 
-                        Integer.valueOf(edtFirstVal.text.toString()) * edtSecondVal.text.toString().toInt()
-                    txtRes.text = edtResult.toString()
+                if (isNotEmptyInput()) {
+                    txtRes.text = multiplyNumbers(
+                        edtFirstVal.text.toString().toInt(),
+                        edtSecondVal.text.toString().toInt()
+                    ).toString()
                 }
             }
 
             btnDiv.setOnClickListener {
-                if (TextUtils.isEmpty(edtFirstVal.text)) {
-                    edtFirstVal.error = getString(R.string.str_enter_first_number)
-                } else if (TextUtils.isEmpty(edtSecondVal.text)) {
-                    edtSecondVal.error = getString(R.string.str_enter_second_number)
-                } else {
-                    val edtResult =
-                        Integer.valueOf(edtFirstVal.text.toString()) / edtSecondVal.text.toString().toInt()
-                    txtRes.text = edtResult.toString()
+                if (isNotEmptyInput()) {
+                    txtRes.text = divNumbers(
+                        edtFirstVal.text.toString().toInt(),
+                        edtSecondVal.text.toString().toInt()
+                    ).toString()
                 }
             }
         }
     }
+
+    private fun isNotEmptyInput(): Boolean {
+        binding?.apply {
+            if (TextUtils.isEmpty(edtFirstVal.text)) {
+                edtFirstVal.error = getString(R.string.str_enter_first_number)
+            } else if (TextUtils.isEmpty(edtSecondVal.text)) {
+                edtSecondVal.error = getString(R.string.str_enter_second_number)
+            } else
+                return true
+        }
+        return false
+    }
+
+    private fun sumNumbers(firstInput: Int, secondInput: Int): Int {
+        return firstInput + secondInput
+    }
+
+    private fun minNumbers(firstInput: Int, secondInput: Int): Int {
+        return firstInput - secondInput
+    }
+
+    private fun multiplyNumbers(firstInput: Int, secondInput: Int): Int {
+        return firstInput * secondInput
+    }
+
+    private fun divNumbers(firstInput: Int, secondInput: Int): Int {
+        return firstInput / secondInput
+    }
+
+
 }
