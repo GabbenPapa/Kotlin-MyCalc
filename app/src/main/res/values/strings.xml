@@ -11,5 +11,6 @@
     <string name="res">Result</string>
     <string name="str_enter_first_number">Pls Enter first number</string>
     <string name="str_enter_second_number">Pls Enter second number</string>
+    <string name="_0">0</string>
 
 </resources>

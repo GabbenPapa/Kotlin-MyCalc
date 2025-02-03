@@ -26,8 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         initListeners()
     }
-
-
+    
     @SuppressLint("SetTextI18n")
     private fun initListeners() {
         binding?.apply {
@@ -93,9 +92,7 @@ class MainActivity : AppCompatActivity() {
         return firstInput * secondInput
     }
 
-    private fun divNumbers(firstInput: Int, secondInput: Int): Int {
-        return firstInput / secondInput
+    private fun divNumbers(firstInput: Int, secondInput: Int): Float {
+        return firstInput.toFloat() / secondInput.toFloat()
     }
-
-
 }
