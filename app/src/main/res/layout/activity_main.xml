@@ -26,7 +26,7 @@
             android:layout_margin="6dp"
             android:background="@color/white"
             android:gravity="start"
-            android:hint="@string/first_number"
+            android:hint="@string/str_first_number"
             android:inputType="number"
             android:minHeight="48dp"
             tools:ignore="LabelFor, autofill" />
@@ -51,7 +51,7 @@
             android:layout_margin="6dp"
             android:background="@color/white"
             android:gravity="start"
-            android:hint="@string/second_number"
+            android:hint="@string/str_second_number"
             android:inputType="number"
             android:minHeight="48dp"
             tools:ignore="LabelFor,MissingConstraints,autofill" />
@@ -134,4 +134,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtResLabel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+
+        android:text="@string/str_start"
+        app:layout_constraintStart_toStartOf="@+id/inputLayoutSecond"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayoutSecond"
+        app:layout_constraintTop_toBottomOf="@+id/txtRes" />
 </androidx.constraintlayout.widget.ConstraintLayout>

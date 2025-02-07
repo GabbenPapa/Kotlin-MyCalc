@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutFirst"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtFirstValue"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:gravity="center"
+            android:hint="@string/str_first_number"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutSecond"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutFirst">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSecondValue"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/buttonMargin"
+            android:gravity="center"
+            android:hint="@string/str_second_number"
+            android:inputType="number"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+
+        android:text="@string/str_start"
+        app:layout_constraintStart_toStartOf="@+id/inputLayoutSecond"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayoutSecond"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutSecond" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutGuess"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtGuess"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:gravity="center"
+            android:hint="@string/str_Your_guess"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+        android:text="@string/str_go"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/inputLayoutGuess"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayoutGuess"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutGuess" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/enoughElevation"
+        app:cardCornerRadius="@dimen/enoughRadius"
+        android:layout_margin="@dimen/buttonMargin"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            >
+            <TextView
+                android:id="@+id/txtReportLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/buttonMargin"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="@dimen/buttonPadding"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/str_report" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buttonMargin"
+        android:text="@string/str_report"
+        app:layout_constraintStart_toStartOf="@+id/inputLayoutGuess"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayoutGuess"
+        app:layout_constraintTop_toBottomOf="@+id/cardReport" />
+
+    <TextView
+        android:id="@+id/txtResLabel"
+        android:layout_width="74dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/str_result"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReport" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="301dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/_0"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

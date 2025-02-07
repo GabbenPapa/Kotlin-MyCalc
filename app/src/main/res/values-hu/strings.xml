@@ -2,8 +2,8 @@
     <string name="app_name">MyCalc</string>
     <string name="value">value</string>
     <string name="type_a_number">Adj meg egy számot</string>
-    <string name="first_number">Első szám</string>
-    <string name="second_number">Második szám</string>
+    <string name="str_first_number">Első szám</string>
+    <string name="str_second_number">Második szám</string>
     <string name="plus_btn">+</string>
     <string name="min_btn">-</string>
     <string name="div_btn">/</string>
@@ -12,4 +12,14 @@
     <string name="str_enter_first_number">Adj meg az elso szamot</string>
     <string name="str_enter_second_number">Adj meg a masodik szamot</string>
     <string name="_0">0</string>
+    <string name="str_start">Start</string>
+    <string name="str_Your_guess">Your Guess</string>
+    <string name="str_go">Go</string>
+    <string name="str_report">Report</string>
+    <string name="str_result">Result</string>
+    <string name="str_enter_number">Enter a number</string>
+    <string name="your_guess_is_correct">Your guess is correct</string>
+    <string name="greater_than">Greater than</string>
+    <string name="less_than">Less than</string>
+
 </resources>

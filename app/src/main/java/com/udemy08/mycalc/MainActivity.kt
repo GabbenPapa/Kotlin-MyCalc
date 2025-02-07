@@ -1,6 +1,7 @@
 package com.udemy08.mycalc
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.activity.enableEdgeToEdge
@@ -64,6 +65,10 @@ class MainActivity : AppCompatActivity() {
                         edtSecondVal.text.toString().toInt()
                     ).toString()
                 }
+            }
+
+            btnGame.setOnClickListener {
+                startActivity(Intent(this@MainActivity, GameActivity::class.java))
             }
         }
     }

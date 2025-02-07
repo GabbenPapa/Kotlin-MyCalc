@@ -2,4 +2,6 @@
 <resources>
     <dimen name="buttonMargin">8dp</dimen>
     <dimen name="buttonPadding">10dp</dimen>
+    <dimen name="enoughElevation">8dp</dimen>
+    <dimen name="enoughRadius">8dp</dimen>
 </resources>
